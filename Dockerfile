@@ -1,4 +1,6 @@
 FROM postgres:13.4-bullseye
+COPY scripts/* /docker-entrypoint-initdb.d
+
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt update -y && apt upgrade -y
 
